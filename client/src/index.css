@@ -86,8 +86,8 @@ footer {
     gap: 15px;
 }
 .chat-bubble .avatar {
-    width: 44px;
-    height: 44px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background: #d9d9d9;
     display: flex;
@@ -99,7 +99,7 @@ footer {
     background: linear-gradient(269deg, #2541fc 1.77%, #2541fc 99.15%);
 }
 .chat-bubble .avatar img {
-    width: 37px;
+    width: 38px;
 }
 .post {
     padding: 10px 20px;

@@ -52,7 +52,7 @@ function App() {
             } else {
                 clearInterval(interval);
             }
-        }, 20);
+        }, 5);
     };
 
     const onSubmit = () => {
