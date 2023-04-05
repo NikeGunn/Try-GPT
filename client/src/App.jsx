@@ -17,7 +17,7 @@ function App() {
 
     const fetchBotResponse = async () => {
         const { data } = await axios.post(
-            "https://ask-ai-w4g9.onrender.com,
+            "https://askai.onrender.com,
             // "http://localhost:5173",
             { input },
             {
