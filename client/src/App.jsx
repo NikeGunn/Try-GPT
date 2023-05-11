@@ -38,12 +38,12 @@ function App() {
                     if (lastItem.type !== "bot") {
                         prevState.push({
                             type: "bot",
-                            post: text.charAt(index - 1),
+                            post: text[index],
                         });
                     } else {
                         prevState.push({
                             type: "bot",
-                            post: lastItem.post + text.charAt(index - 1),
+                            post: lastItem.post + text[index],
                         });
                     }
                     return [...prevState];
@@ -94,6 +94,43 @@ function App() {
                 <div className="layout">
                     {posts.map((post, index) => (
                         <div
+                            key={index}
+                            className={`chat-bubble ${
+                                post.type === "bot" || post.type === "loading"
+                                    ? "bot"
+                                    : ""
+                            }`}
+                        >
+                            <div className="avatar">
+                                <img
+                                    src={
+                                        post.type === "bot" ||
+                                        post.type === "loading"
+                                            ? bot
+                                            : user
+                                    }
+                                />
+                            </div>
+                            {post.type === "loading" ? (
+                                <div className="loader">
+                                    <img src={loadingIcon} />
+                                </div>
+                            ) : (
+                                <div className="post">{post.post}</div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </section>
+            <footer>
+                <input
+                    className="composebar"
+                    value={input}
+                    autoFocus
+                    type="text"
+                    placeholder="Ask anything!"
+                    onChange={(e) => setInput(
+                    <div
                             key={index}
                             className={`chat-bubble ${
                                 post.type === "bot" || post.type === "loading"
